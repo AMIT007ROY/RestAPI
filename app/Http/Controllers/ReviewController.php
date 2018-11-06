@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Model\Review;
 use Illuminate\Http\Request;
+use App\Http\Resources\Product\ProductCollection;
+use App\Model\Product;
 
 class ReviewController extends Controller
 {
@@ -14,7 +16,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        return ProductCollection::collection(Product::all());
     }
 
     /**
